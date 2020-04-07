@@ -1,3 +1,3 @@
 import { startServer } from "./src/bin"
 
-startServer(3000)
+startServer(process.env.PORT);
