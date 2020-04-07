@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-watch ."
+    "start": "node build",
+    "build": "babel src -d build"
   },
   "author": "",
   "license": "ISC",
