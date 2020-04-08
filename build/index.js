@@ -1,3 +1,4 @@
 "use strict";
 const {startServer} = require("./bin");
-startServer(process.env.PORT);
+const PORT = process.env.PORT||'8080';
+startServer(PORT);
