@@ -27,13 +27,13 @@ var _db = require("../db");
 
 const app = (0, _express.default)();
 
-async function startServer(PORT) {
+async function startServer() {
   await (0, _dotenv.config)();
   await Promise.all([(0, _db.connectDatabase)(process.env.MONGO_URI), app.use((0, _cors.default)()), app.use(_bodyParser.default.urlencoded({
     extended: true
   })), app.use(_bodyParser.default.json()), app.use((0, _helmet.default)()), app.use((0, _compression.default)()), app.use("/api", _apis.api)]);
-  app.listen(PORT, () => {
-    console.log(" server start at port", PORT);
+  app.listen(process.env.PORT, () => {
+    console.log(" server start at port", process.env.PORT);
   });
   (0, _morgan.default)("tiny");
 }
