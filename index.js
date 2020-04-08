@@ -1,3 +1,3 @@
-import { startServer } from "./src/bin"
-
-startServer(process.env.PORT);
+"use strict";
+const { startServer } = require("./service/bin");
+startServer();
