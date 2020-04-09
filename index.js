@@ -1,3 +1,3 @@
 "use strict";
-const { startServer } = require("./service/bin");
+const { startServer } = require("./build/bin");
 startServer();

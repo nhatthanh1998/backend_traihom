@@ -8,7 +8,7 @@ import { config } from "dotenv"
 import { api } from "../apis"
 import { connectDatabase } from "../db"
 const app = express()
-export async function startServer(PORT) {
+export async function startServer() {
     await config()
     await Promise.all([
         connectDatabase(process.env.MONGO_URI),
@@ -20,7 +20,7 @@ export async function startServer(PORT) {
         app.use(compression()),
         app.use("/api", api)
     ])
-    app.listen(PORT, () => {
+    app.listen(process.env.PORT, () => {
         console.log(" server start at port", PORT)
     })
     morgan("tiny")
