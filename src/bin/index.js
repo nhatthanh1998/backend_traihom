@@ -21,7 +21,7 @@ export async function startServer() {
         app.use("/api", api)
     ])
     app.listen(process.env.PORT, () => {
-        console.log(" server start at port", PORT)
+        console.log(" server start at port", process.env.PORT)
     })
     morgan("tiny")
 }
