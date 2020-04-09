@@ -1,3 +1,3 @@
 "use strict";
-const { startServer } = require("./build/bin");
+const { startServer } = require("./build/bin/index.js");
 startServer();
